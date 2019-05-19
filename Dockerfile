@@ -12,4 +12,6 @@ COPY bin ./bin
 COPY lib ./lib
 
 RUN mkdir -p $APP_DIR/lib
+RUN pip install chromedriver_installer \
+    --install-option="--chromedriver-version=2.37"
 RUN pip3 install -r requirements.txt -t /var/task/lib
